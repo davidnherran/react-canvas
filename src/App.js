@@ -36,6 +36,8 @@ const App = () => {
         brushColor="#777777"
         style={{ border: "solid 1px #cccccc" }}
         ref={drawCanvas}
+        canvasHeight={200}
+        canvasWidth={400}
       />
       <CanvasDraw
         brushRadius={0.5}
@@ -44,6 +46,8 @@ const App = () => {
         disabled={true}
         style={{ border: "solid 1px #cccccc" }}
         ref={resultCanvas}
+        canvasHeight={200}
+        canvasWidth={400}
       />
     </div>
   );
