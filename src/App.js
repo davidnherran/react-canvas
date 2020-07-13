@@ -3,11 +3,13 @@ import CanvasDraw from "react-canvas-draw";
 
 const App = () => {
 
-  const draw = useRef(null)
+  const drawCanvas = useRef(null)
+  const resultCanvas = useRef(null)
 
   const handleClick = () =>{
-    const data = draw.current.getSaveData();
+    const data = drawCanvas.current.getSaveData();
     console.log(data)
+    resultCanvas.current.loadSaveData(data)
   }
 
   return (
@@ -19,7 +21,7 @@ const App = () => {
         brushRadius={0.5}
         brushColor="#777777"
         style={{ border: "solid 1px #cccccc" }}
-        ref={draw}
+        ref={drawCanvas}
       />
       <CanvasDraw
         brushRadius={0.5}
@@ -27,6 +29,7 @@ const App = () => {
         hideGrid={true}
         disabled={true}
         style={{ border: "solid 1px #cccccc" }}
+        ref={resultCanvas}
       />
     </div>
   );
