@@ -12,10 +12,24 @@ const App = () => {
     resultCanvas.current.loadSaveData(data)
   }
 
+  const clear = () => {
+    drawCanvas.current.clear()
+  }
+
+  const undo = () => {
+    drawCanvas.current.undo()
+  }
+
   return (
     <div>
       <button onClick={handleClick} >
         Save Draw
+      </button>
+      <button onClick={clear} >
+        Clear Draw
+      </button>
+      <button onClick={undo} >
+        Undo
       </button>
       <CanvasDraw
         brushRadius={0.5}
